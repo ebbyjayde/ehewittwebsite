@@ -79,3 +79,50 @@
     </footer>
 </body>
 </html>
+/* ========================================
+   ANIMATIONS - ADD THIS EXACTLY
+   ======================================== */
+
+/* 1. NAVIGATION BOUNCE */
+@keyframes navBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.nav-link {
+    /* Your existing styles + ADD these 2 lines: */
+    transition: all 0.3s ease;
+    animation: navBounce 2s infinite;
+}
+
+/* 2. IMAGE PULSE */
+@keyframes imagePulse {
+    0% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 0 rgba(74,144,226,0.7); 
+    }
+    70% { 
+        transform: scale(1.08); 
+        box-shadow: 0 0 0 20px rgba(74,144,226,0); 
+    }
+    100% { transform: scale(1); }
+}
+.profile-img {
+    /* Your existing styles + ADD: */
+    animation: imagePulse 3s infinite;
+}
+
+/* 3. TABLE ROW HOVER */
+tr:hover td, tr:hover th {
+    background: #e3f2fd !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* 4. SECTION FADE IN */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.hero-section, .demographics, .schedule-section {
+    animation: fadeIn 0.8s ease-out;
+}
